@@ -32,6 +32,7 @@
   border: 2px solid rgba(255, 255, 255, 0.18);
   padding: 30px;
   flex-direction: row;
+  backdrop-filter: blur(1px);
 }
 .card_container h1 {
   color: #fff;
@@ -60,7 +61,7 @@
 
 @media (max-width: 768px) {
   .card_container {
-    margin-top: 5vh;
+    margin-top: 20px;
     flex-direction: column-reverse;
     border: none;
     padding: 0%;

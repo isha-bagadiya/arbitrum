@@ -6,7 +6,7 @@ function Step01(props) {
     <div className="step_1">
       <h1>Share your wallet details</h1>
       <p>Connect your wallet!</p>
-      <p>Collect 0.05 ETH every 24 hours.</p>
+      <p>Collect 0.03 ETH every 24 hours.</p>
       <div className="connect-btn-wallet-div">
         <ConnectButton />
       </div>

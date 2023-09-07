@@ -3,9 +3,7 @@ import { useAccount } from "wagmi";
 
 function Step02({ setTwitterUrl, warnings }) {
   const { address } = useAccount();
-  const tweetContent = `Getting some ETH using https://mode.faucet.xyz on ${
-    address ? address : ""
-  } @modenetwork @optimismFND #faucet #modedomains`;
+  const tweetContent = `Hey, I’m using the @ModeNetwork faucet to mint @Mode_Domains. You can get testnet ETH from the faucet here: https://faucet.modedomains.xyz/`;
   //   const tweetContent = "demo";
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     tweetContent

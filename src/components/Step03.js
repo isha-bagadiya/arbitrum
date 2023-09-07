@@ -1,3 +1,4 @@
+import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
@@ -8,6 +9,27 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const [receipt, setReceipt] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showLowBalanceMsg, setLowBalanceMsg] = useState(false);
+
+  useEffect(() => {
+    const Main_address = "0x8BeE50Ad14f8f8F64F8e0E6541A5B87dd45E67C0";
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://sepolia.mode.network/"
+    );
+    const fetchBalance = async () => {
+      try {
+        const balanceWei = await provider.getBalance(Main_address);
+        const balanceEther = ethers.utils.formatEther(balanceWei);
+
+        if (balanceEther < 0.035) {
+          setLowBalanceMsg(true);
+        }
+      } catch (error) {
+        console.log("Error:", error.message);
+      }
+    };
+    fetchBalance();
+  }, []);
 
   useEffect(() => {
     if (address) {
@@ -51,15 +73,31 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   };
   return (
     <div className="step_1">
-      <h1>Yayy! You can claim faucet.</h1>
+      <h1 className={showLowBalanceMsg ? "disabled" : ""}>
+        Yayy! You can claim faucet.
+      </h1>
 
       <button
-        className={showConfetti ? "claim-faucet disabled" : "claim-faucet"}
+        className={
+          showConfetti || showLowBalanceMsg
+            ? "claim-faucet disabled"
+            : "claim-faucet"
+        }
         onClick={handleDrip}
       >
         {showConfetti ? "Claimed" : loading ? "Claiming..." : "Claim 0.05 ETH"}
       </button>
-
+      {showLowBalanceMsg ? (
+        <div className="lb_div err_msg_div">
+          <span className="lb_title">
+            Oops! The Faucet is Taking a Coffee Break! ☕
+          </span>
+          <p className="lb_msg">
+            Looks like the faucet is out of ETH for now. It's taking a coffee
+            break! Try again later.
+          </p>
+        </div>
+      ) : null}
       {message || receipt || error ? (
         <div className="err_msg_div">
           {message && <p className="message">{message}</p>}

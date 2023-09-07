@@ -121,8 +121,9 @@
   font-family: "Chakra Petch", sans-serif;
   text-transform: uppercase;
 }
-.claim-faucet.disabled {
+.disabled {
   pointer-events: none;
+  opacity: 0.5;
 }
 .claim-faucet:hover {
   border-color: #dffe00;
@@ -191,4 +192,51 @@ p.message {
   align-items: center;
   height: 6vh;
   border-top: 1px solid rgb(45, 45, 45);
+}
+
+.lb_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.lb_div span {
+  width: 90%;
+  word-break: break-word;
+}
+.lb_title {
+  padding: 10px;
+  color: #dffe00;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: "Chakra Petch", sans-serif;
+}
+.lb_msg {
+  width: 70%;
+  word-break: break-word;
+  padding: 10px;
+  line-height: 20px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .step_1 {
+    width: 100%;
+  }
+  .lb_div span,
+  .lb_div p {
+    width: 100%;
+    word-break: break-word;
+  }
+  .lb_title {
+    font-size: large;
+  }
+  .lb_msg {
+    font-size: medium;
+  }
 }
