@@ -10,7 +10,7 @@ function Step01(props) {
       <div className="connect-btn-wallet-div">
         <ConnectButton />
       </div>
-      <p>or</p>
+      {/* <p>or</p>
       <div className="wallet-address-div">
         <input
           type="text"
@@ -18,7 +18,7 @@ function Step01(props) {
           placeholder=" .mode handle(coming soon) or Wallet Address"
           onChange={(e) => props.setAddressInput(e.target.value)}
         />
-      </div>
+      </div> */}
       {props.warnings.firstStep ? (
         <p className="error_msg">{props.warnings.firstStep}</p>
       ) : null}

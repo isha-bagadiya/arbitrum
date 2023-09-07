@@ -9,7 +9,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const [receipt, setReceipt] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [showLowBalanceMsg, setLowBalanceMsg] = useState(false);
+  const [showLowBalanceMsg, setLowBalanceMsg] = useState(true);
 
   useEffect(() => {
     const Main_address = "0x8BeE50Ad14f8f8F64F8e0E6541A5B87dd45E67C0";
@@ -23,6 +23,8 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
 
         if (balanceEther < 0.035) {
           setLowBalanceMsg(true);
+        } else {
+          setLowBalanceMsg(false);
         }
       } catch (error) {
         console.log("Error:", error.message);

@@ -50,8 +50,7 @@ function App() {
         }
       } else {
         setWarnings({
-          firstStep:
-            "Please enter correct wallet address or connect you wallet",
+          firstStep: "Please connect you wallet",
           secondStep: "",
           thirdStep: "",
         });
