@@ -187,10 +187,13 @@ p.message {
 
 .footer {
   margin-top: auto;
+
+  margin: auto;
+  padding: 10px 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 6vh;
+  margin-top: 20px;
   border-top: 1px solid rgb(45, 45, 45);
 }
 
@@ -223,7 +226,42 @@ p.message {
   font-weight: 500;
   font-family: "Inter", sans-serif;
 }
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.social-media > svg {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: rgba(10, 10, 10, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+.social-media > svg:hover {
+  border-color: #dffe00;
+}
 
+.twitter-follow {
+  width: 70%;
+  word-break: break-word;
+  padding: 10px;
+  line-height: 20px;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+.twitter-follow > a {
+  text-decoration: none;
+  font-size: x-large;
+  margin-left: 5px;
+  color: #dffe00;
+  font-family: "Chakra Petch", sans-serif;
+}
 @media (max-width: 768px) {
   .step_1 {
     width: 100%;
@@ -238,5 +276,9 @@ p.message {
   }
   .lb_msg {
     font-size: medium;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 20px;
   }
 }

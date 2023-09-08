@@ -78,7 +78,6 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
       <h1 className={showLowBalanceMsg ? "disabled" : ""}>
         Yayy! You can claim faucet.
       </h1>
-
       <button
         className={
           showConfetti || showLowBalanceMsg
@@ -87,8 +86,15 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
         }
         onClick={handleDrip}
       >
-        {showConfetti ? "Claimed" : loading ? "Claiming..." : "Claim 0.05 ETH"}
-      </button>
+        {showConfetti ? "Claimed" : loading ? "Claiming..." : "Claim 0.03 ETH"}
+      </button>{" "}
+      <p className="twitter-follow">
+        Follow us at
+        <a href="https://twitter.com/Mode_Domains" target="_blanck">
+          {" "}
+          @Mode_Domains
+        </a>
+      </p>
       {showLowBalanceMsg ? (
         <div className="lb_div err_msg_div">
           <span className="lb_title">
@@ -117,7 +123,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
           )}
           {error && <p className="error_msg">Error : {error}</p>}
         </div>
-      ) : null}
+      ) : null}{" "}
     </div>
   );
 }
