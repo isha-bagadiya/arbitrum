@@ -22,7 +22,7 @@ function App() {
   const [twitterUrl, setTwitterUrl] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
   const ethereumAddressRegex = /^(0x)?[0-9a-fA-F]{40}$/;
-  const twitterUrlRegex = /^https:\/\/twitter\.com\/\w+\/status\/\d+.*$/;
+  const twitterUrlRegex = /^https:\/\/x\.com\/\w+\/status\/\d+.*$/;
 
   const [warnings, setWarnings] = useState({
     firstStep: "",
@@ -66,9 +66,9 @@ function App() {
         });
       }
     }
-    // if (step < 3) {
-    //   setStep(step + 1);
-    // }
+    if (step === 3) {
+      setStep(step + 1);
+    }
   };
 
   const handlePrevious = () => {
@@ -81,6 +81,7 @@ function App() {
       firstStep: "",
       secondStep: "",
       thirdStep: "",
+      forthStep: "",
     });
   }, [address, addressInput, twitterUrl]);
   return (
@@ -111,7 +112,7 @@ function App() {
               </button>
               <button
                 onClick={handleNext}
-                disabled={step === 3}
+                disabled={step === 4}
                 className="next"
               >
                 Next

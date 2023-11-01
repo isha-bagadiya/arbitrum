@@ -2,6 +2,7 @@ import React from "react";
 import Step01 from "./Step01";
 import Step02 from "./Step02";
 import Step03 from "./Step03";
+import Step04 from "./Step04";
 
 const StepContent = ({
   step,
@@ -32,7 +33,13 @@ const StepContent = ({
     case 3:
       return (
         <div>
-          <Step03
+          <Step03 />
+        </div>
+      );
+    case 4:
+      return (
+        <div>
+          <Step04
             addressInput={addressInput}
             warnings={warnings}
             setShowConfetti={setShowConfetti}

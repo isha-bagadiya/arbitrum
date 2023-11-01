@@ -223,7 +223,10 @@ p.message {
   font-weight: 500;
   font-family: "Inter", sans-serif;
 }
-
+h1.discord-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 @media (max-width: 768px) {
   .step_1 {
     width: 100%;
@@ -238,5 +241,8 @@ p.message {
   }
   .lb_msg {
     font-size: medium;
+  }
+  h1.discord-title {
+    font-size: 1.2rem;
   }
 }

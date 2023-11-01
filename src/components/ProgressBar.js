@@ -9,6 +9,8 @@ const ProgressBar = ({ step }) => {
         <div className={`step ${step >= 2 ? "active" : ""}`}>2</div>
         <div className={`line ${step >= 3 ? "active" : ""}`}></div>
         <div className={`step ${step >= 3 ? "active" : ""}`}>3</div>
+        <div className={`line ${step >= 4 ? "active" : ""}`}></div>
+        <div className={`step ${step >= 4 ? "active" : ""}`}>4</div>
       </div>
     </div>
   );
