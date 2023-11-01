@@ -5,7 +5,7 @@ function Step02({ setTwitterUrl, warnings }) {
   const { address } = useAccount();
   const tweetContent = `Hey, I’m using the @ModeNetwork faucet to mint @Mode_Domains. You can get testnet ETH from the faucet here: https://faucet.modedomains.xyz/`;
   //   const tweetContent = "demo";
-  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  const twitterUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(
     tweetContent
   )}`;
 
