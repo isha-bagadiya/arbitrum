@@ -266,6 +266,10 @@ h1.discord-title {
   color: #dffe00;
   font-family: "Chakra Petch", sans-serif;
 }
+
+.recaptcha {
+  margin: 20px 0;
+}
 @media (max-width: 768px) {
   .step_1 {
     width: 100%;
