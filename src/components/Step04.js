@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
+import DiscordService from "../services/DiscordService";
 
 function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const { address } = useAccount();
@@ -10,6 +11,8 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showLowBalanceMsg, setLowBalanceMsg] = useState(true);
+
+  const { Send } = DiscordService();
 
   useEffect(() => {
     const Main_address = "0x8BeE50Ad14f8f8F64F8e0E6541A5B87dd45E67C0";
@@ -53,6 +56,18 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
       });
 
       if (response.ok) {
+        // discord msg
+        Send(
+          ` 🎉 Congratulations! ${
+            recipientAddress.slice(0, 7) +
+            "..." +
+            recipientAddress.slice(
+              recipientAddress.length - 5,
+              recipientAddress.length
+            )
+          } just claimed the faucet 0.03 ETH ! 🎉`
+        );
+
         setLoading(false);
         const data = await response.json();
         setMessage(data.message);

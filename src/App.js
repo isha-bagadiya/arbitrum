@@ -15,6 +15,7 @@ import Step01 from "./components/Step01";
 import { useAccount } from "wagmi";
 import ProgressBar from "./components/ProgressBar";
 import StepContent from "./components/StepContent";
+import ThreeJsComponent from "./components/ThreeJsComponent";
 
 function App() {
   const { address } = useAccount();
@@ -22,8 +23,9 @@ function App() {
   const [twitterUrl, setTwitterUrl] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
   const ethereumAddressRegex = /^(0x)?[0-9a-fA-F]{40}$/;
-  const twitterUrlRegex = /^https:\/\/x.com\/\w+\/status\/\d+\?s=\d+$/;
-  const oldtwitterUrlRegex = /^https:\/\/twitter.com\/\w+\/status\/\d+\?s=\d+$/;
+  const twitterUrlRegex = /^https:\/\/x\.com\/\w+\/status\/\d+(\?.*)?$/;
+  const oldtwitterUrlRegex =
+    /^https:\/\/twitter\.com\/\w+\/status\/\d+(\?.*)?$/;
   const [warnings, setWarnings] = useState({
     firstStep: "",
     secondStep: "",
@@ -94,6 +96,9 @@ function App() {
       </nav>
       <div className="main_container">
         <div className="card_container">
+          <div className="canvas-component" id="canvas-parent">
+            <ThreeJsComponent />
+          </div>
           <div className="custom-stepper">
             <ProgressBar step={step} />
             <StepContent

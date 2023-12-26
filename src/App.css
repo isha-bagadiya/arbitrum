@@ -57,7 +57,16 @@
 
   word-break: break-word;
 }
-
+#canvas-parent {
+  width: 400px;
+  height: 400px;
+  background-color: transparent;
+  border: 1px solid red;
+  position: relative;
+}
+canvas {
+  position: absolute;
+}
 @media (max-width: 768px) {
   .card_container {
     margin-top: 20px;

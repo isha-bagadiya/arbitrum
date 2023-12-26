@@ -53,22 +53,22 @@ const wagmiConfig = createConfig({
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider
-        chains={chains}
-        theme={midnightTheme({
-          accentColor: "#dffe00",
-          accentColorForeground: "black",
-          borderRadius: "medium",
-          fontStack: "system",
-          overlayBlur: "small",
-        })}
-      >
-        <App />
-      </RainbowKitProvider>
-    </WagmiConfig>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <WagmiConfig config={wagmiConfig}>
+    <RainbowKitProvider
+      chains={chains}
+      theme={midnightTheme({
+        accentColor: "#dffe00",
+        accentColorForeground: "black",
+        borderRadius: "medium",
+        fontStack: "system",
+        overlayBlur: "small",
+      })}
+    >
+      <App />
+    </RainbowKitProvider>
+  </WagmiConfig>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
