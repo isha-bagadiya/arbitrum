@@ -1,7 +1,8 @@
 import { ethers } from "ethers";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useAccount } from "wagmi";
 import DiscordService from "../services/DiscordService";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const { address } = useAccount();
@@ -11,6 +12,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showLowBalanceMsg, setLowBalanceMsg] = useState(true);
+  const captchaRef = useRef(null);
 
   const { Send } = DiscordService();
 
@@ -46,7 +48,26 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
 
   const handleDrip = async () => {
     setLoading(true);
+    const token = captchaRef.current.getValue();
+    const inputVal = "";
+    captchaRef.current.reset();
     try {
+      // Make a POST request to your API endpoint
+      const humanCheck = await fetch(
+        "https://recaptcha-dusky.vercel.app/post",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token, inputVal }),
+        }
+      );
+      // Parse the response
+      const data = await humanCheck.text();
+
+      // Update the result state based on the API response
+      console.log(data);
       const response = await fetch("https://modedomains.vercel.app/drip", {
         method: "POST",
         headers: {
@@ -93,7 +114,11 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
       <h1 className={showLowBalanceMsg ? "disabled" : ""}>
         Yayy! You can claim faucet.
       </h1>
-
+      <ReCAPTCHA
+        sitekey={process.env.REACT_APP_SITE_KEY}
+        ref={captchaRef}
+        className={showLowBalanceMsg ? "disabled" : ""}
+      />
       <button
         className={
           showConfetti || showLowBalanceMsg

@@ -94,11 +94,11 @@ function App() {
       <nav className="navbar">
         <span>Mode Faucet</span>
       </nav>
+      {/* <div className="canvas-component" id="canvas-parent">
+        <ThreeJsComponent />
+      </div> */}
       <div className="main_container">
         <div className="card_container">
-          <div className="canvas-component" id="canvas-parent">
-            <ThreeJsComponent />
-          </div>
           <div className="custom-stepper">
             <ProgressBar step={step} />
             <StepContent

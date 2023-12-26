@@ -616,7 +616,7 @@ function ThreeJsComponent() {
             };
 
             var init = function () {
-              var ballGeometry = new THREE.SphereGeometry(360, 20, 20);
+              var ballGeometry = new THREE.SphereGeometry(860, 20, 20);
               var ballMaterial = new THREE.MeshLambertMaterial({
                 color: 0xffffff,
                 shading: THREE.FlatShading,

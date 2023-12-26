@@ -58,11 +58,14 @@
   word-break: break-word;
 }
 #canvas-parent {
-  width: 400px;
-  height: 400px;
+  width: 900px;
+  height: 900px;
   background-color: transparent;
   border: 1px solid red;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 canvas {
   position: absolute;
