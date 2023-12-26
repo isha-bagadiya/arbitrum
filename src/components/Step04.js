@@ -11,7 +11,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   const [receipt, setReceipt] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [showLowBalanceMsg, setLowBalanceMsg] = useState(false);
+  const [showLowBalanceMsg, setLowBalanceMsg] = useState(true);
   const [captchaToken, setCaptchaToken] = useState("");
   const captchaRef = useRef(null);
 
@@ -36,7 +36,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
         console.log("Error:", error.message);
       }
     };
-    // fetchBalance();
+    fetchBalance();
   }, []);
 
   useEffect(() => {
