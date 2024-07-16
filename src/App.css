@@ -11,7 +11,8 @@
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   border-bottom: 1px solid #fff;
   /* color: #dffe00; */
   color: var(--secondary-color);
@@ -19,7 +20,23 @@
   font-weight: 900;
   font-family: "Chakra Petch", sans-serif;
   text-transform: uppercase;
+  padding: 0px 40px;
 }
+
+.navlogodiv{
+  width: 15%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daologo{
+  width: 100%;
+  height: auto;
+
+}
+
 .card_container {
   margin-top: 20px;
   width: 90%;
@@ -71,6 +88,10 @@
 }
 canvas {
   position: absolute;
+}
+
+.social-media svg:hover{
+border-color: var(--secondary-color) !important;
 }
 @media (max-width: 768px) {
   .card_container {

@@ -9,7 +9,7 @@ import StepProgressBar from "react-step-progress";
 // import the stylesheet
 import "react-step-progress/dist/index.css";
 import Confetti from "react-confetti";
-
+import daologo from "./logo.webp"
 import "./styles/Steps.css";
 import Step01 from "./components/Step01";
 import { useAccount } from "wagmi";
@@ -92,7 +92,10 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <span>Arbitrum Faucet</span>
+        <div className="navlogodiv">
+        <img src={daologo} alt="#LamprosLabsDao" className="daologo"></img>
+        </div>
+        <span>Arbitrum Sepolia Faucet</span>
       </nav>
       {/* <div className="canvas-component" id="canvas-parent">
         <ThreeJsComponent />

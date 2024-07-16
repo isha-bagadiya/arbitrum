@@ -20,7 +20,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
   useEffect(() => {
     const Main_address = "0x8BeE50Ad14f8f8F64F8e0E6541A5B87dd45E67C0";
     const provider = new ethers.providers.JsonRpcProvider(
-      "https://sepolia.mode.network/"
+      "https://endpoints.omniatech.io/v1/arbitrum/sepolia/public"
     );
     const fetchBalance = async () => {
       try {
@@ -69,7 +69,7 @@ function Step03({ addressInput, setShowConfetti, showConfetti }) {
       // Update the result state based on the API response
       console.log(data);
       if (data) {
-        const response = await fetch("https://modedomains.vercel.app/drip", {
+        const response = await fetch("https://api-arb-faucet.vercel.app/drip", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -3,7 +3,17 @@ import { useAccount } from "wagmi";
 
 function Step02({ setTwitterUrl, warnings }) {
   const { address } = useAccount();
-  const tweetContent = `Hey, I’m using the @ModeNetwork faucet to mint @Mode_Domains. You can get testnet ETH from the faucet here: https://faucet.modedomains.xyz/`;
+  const tweetContent = `Hey everyone!
+
+I'm attending the "Arbitrum Governance and Development Initiative" by @LamprosLabsDAO!
+
+Gaining amazing skills on @arbitrum, deploying on Arbitrum Stylus, Arbitrum Governance, and Arbitrum DAO.
+
+Thanks, @LamprosLabsDAO for this fantastic session!
+
+#web3 #blockchain`;
+
+  // const tweetContent = `Hey, I’m using the @ModeNetwork faucet to mint @Mode_Domains. You can get testnet ETH from the faucet here: https://faucet.modedomains.xyz/`;
   //   const tweetContent = "demo";
   const twitterUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(
     tweetContent
