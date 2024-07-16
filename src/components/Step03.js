@@ -9,7 +9,15 @@ function Step03() {
           Join our Discord for exciting faucet updates and wallet perks! 🌟
           Let's level up your wallet together! 🤝🏻
         </p>
-        <iframe
+        <iframe 
+        title="Join Discord"
+        src="https://discord.com/widget?id=1187731726919807038&theme=dark" width="350" 
+        height="500" 
+        allowtransparency="true" 
+        frameborder="0" 
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+        </iframe>
+        {/* <iframe
           title="Join Discord"
           src="https://discord.com/widget?id=1167340030382059520&theme=dark"
           width="350"
@@ -17,7 +25,7 @@ function Step03() {
           allowtransparency="true"
           frameborder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        ></iframe>
+        ></iframe> */}
       </div>
     </div>
   );
