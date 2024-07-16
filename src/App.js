@@ -92,7 +92,7 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <span>Mode Faucet</span>
+        <span>Arbitrum Faucet</span>
       </nav>
       {/* <div className="canvas-component" id="canvas-parent">
         <ThreeJsComponent />

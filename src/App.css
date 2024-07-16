@@ -13,7 +13,8 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #fff;
-  color: #dffe00;
+  /* color: #dffe00; */
+  color: var(--secondary-color);
   font-size: 1.5rem;
   font-weight: 900;
   font-family: "Chakra Petch", sans-serif;
@@ -46,7 +47,8 @@
   word-break: break-word;
 }
 .oops {
-  color: #dffe00;
+  /* color: #dffe00; */
+  color: var(--secondary-color);
 
   font-weight: 900;
   font-family: "Chakra Petch", sans-serif;

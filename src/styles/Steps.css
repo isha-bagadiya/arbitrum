@@ -21,8 +21,10 @@
   width: 35px;
   height: 35px;
   border: 1px solid rgb(45, 45, 45);
-  background-color: rgb(21, 22, 25);
-  color: white;
+  /* background-color: rgb(21, 22, 25); */
+  background-color: #ffffff;
+  /* color: white; */
+  color: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -35,21 +37,25 @@
 }
 
 .step.active {
-  background-color: rgb(21, 22, 25); /* Change the active step color */
-  color: #dffe00;
-  border-color: #dffe00;
+  /* background-color: rgb(21, 22, 25);  */
+  /* color: #dffe00; */
+  /* border-color: #dffe00; */
+  background-color: transparent;
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 .line {
   flex-grow: 1;
-  height: 3px;
-  background-color: rgb(21, 22, 25); /* Default line color */
+  height: 5px;
+  background-color: rgb(6, 23, 72); 
   margin: 0 -5px; /* Adjust the margin as needed */
   transition: background-color 0.3s ease;
 }
 
 .line.active {
-  background-color: #dffe00; /* Change line color when active */
+  /* background-color: #dffe00;  */
+  background-color: var(--secondary-color);
 }
 
 /* ... Other styles ... */
@@ -62,6 +68,7 @@
 }
 .step_1 > p {
   text-align: center;
+  color: #ffffff;
 }
 .button-container {
   display: flex;
@@ -73,6 +80,12 @@
 .connect-btn-wallet-div {
   margin-top: 30px;
 }
+
+[data-rk] .ju367v9c {
+  background: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+
 .wallet-address-div {
   width: 100%;
 }
@@ -86,6 +99,26 @@
   font-size: large;
   border-radius: 8px;
 }
+
+[data-rk] .ju367v9x {
+  background: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+[data-rk] .ju367vfo {
+  color: var(--primary-color) !important;
+}
+
+[data-rk] .ju367vb0 {
+  background: var(--rk-colors-modalBackground);
+  border: 1px solid white !important;
+}
+
+[data-rk] .ju367veu {
+  /* color: var(--rk-colors-accentColor); */
+  color: var(--secondary-color) !important
+}
+
 .tweet-input-div {
   display: flex;
   flex-direction: column;
@@ -103,18 +136,22 @@
   flex: 1;
   padding: 10px;
   border: 1px solid rgb(45, 45, 45);
-  background-color: rgb(21, 22, 25);
+  /* background-color: rgb(21, 22, 25); */
+  background-color: white;
   box-shadow: none;
-  color: white;
+  /* color: white; */
+  color: var(--primary-color);
   font-size: large;
   border-radius: 8px;
 }
+
 .claim-faucet {
   padding: 10px;
   cursor: pointer;
   border: 1px solid rgb(45, 45, 45);
   background-color: rgb(21, 22, 25);
-  color: #dffe00;
+  /* color: #dffe00; */
+  color: var(--secondary-color);
   border-radius: 8px;
   font-size: large;
   font-weight: 700;
@@ -126,18 +163,24 @@
   opacity: 0.5;
 }
 .claim-faucet:hover {
-  border-color: #dffe00;
+  /* border-color: #dffe00; */
+  border-color: var(--secondary-color);
 }
+
 .button-container button {
   padding: 8px 15px;
-  border: 1px solid rgb(45, 45, 45);
-  background-color: rgb(21, 22, 25);
+  /* border: 1px solid rgb(45, 45, 45); */
+  border: 1px solid white;
+  /* background-color: rgb(21, 22, 25); */
+  background-color: transparent;
   color: white;
   border-radius: 8px;
   cursor: pointer;
 }
 .button-container button:hover {
-  border-color: #dffe00;
+  /* border-color: #dffe00; */
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 .button-container button:disabled {
   opacity: 0.5;
